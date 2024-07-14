@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { key, message } = req.body;
     try {
-      const response = await axios.post('http://localhost/php/encrypt_decrypt.php', { key, message });
+      const response = await axios.post('https://dudeiptv.com/php/encrypt_decrypt.php', { key, message });
       res.status(200).json(response.data);
     } catch (error) {
       res.status(500).json({ error: 'Encryption failed' });
